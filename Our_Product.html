@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Products - AR LIGHTING SOLUTION</title>
+    <style>
+        /* General Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #00557f, #007ba7);
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 500;
+        }
+        nav a:hover {
+            color: #ffdd40;
+        }
+
+        /* Product Section */
+        .products-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .product-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            width: 280px;
+            transition: transform 0.3s ease;
+        }
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+        .product-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+        .product-content {
+            padding: 15px;
+            text-align: center;
+        }
+        .product-title {
+            color: #00557f;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        .product-description {
+            font-size: 1em;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .product-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007ba7;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .product-link:hover {
+            background-color: #00557f;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #00557f;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+        footer a {
+            color: #ffdd40;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .products-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .product-card {
+                width: 100%;
+                max-width: 340px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>AR LIGHTING SOLUTION</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="products.html">Our Product</a>
+            <a href="projects.html">Our Project</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </header>
+
+    <!-- Products Section -->
+    <div class="products-container">
+        <!-- Product Card Example -->
+        <div class="product-card">
+            <img src="images/solar_light.jpg" alt="Solar Light" class="product-image">
+            <div class="product-content">
+                <h3 class="product-title">Solar Light</h3>
+                <p class="product-description">High-quality solar-powered lighting solution perfect for outdoor use, providing reliable illumination in any environment.</p>
+                <a href="#" class="product-link">Learn More</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="images/led_street_light.jpg" alt="LED Street Light" class="product-image">
+            <div class="product-content">
+                <h3 class="product-title">LED Street Light</h3>
+                <p class="product-description">Energy-efficient LED street light that offers superior brightness and durability, ideal for public spaces.</p>
+                <a href="#" class="product-link">Learn More</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="images/solar_panel.jpg" alt="Solar Panel" class="product-image">
+            <div class="product-content">
+                <h3 class="product-title">Solar Panel</h3>
+                <p class="product-description">Efficient solar panels for converting sunlight into renewable energy, perfect for both residential and commercial setups.</p>
+                <a href="#" class="product-link">Learn More</a>
+            </div>
+        </div>
+        
+        <!-- Add more product cards here as needed -->
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Designed by Md Rajek Ali. Website: <a href="https://webxamina.com" target="_blank">webxamina.com</a> | Contact: 7908684378</p>
+    </footer>
+</body>
+</html>

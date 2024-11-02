@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - AR LIGHTING SOLUTION</title>
+    <style>
+        /* General Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #00557f, #007ba7);
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 500;
+        }
+        nav a:hover {
+            color: #ffdd40;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            max-width: 800px;
+            background-color: #fff;
+            margin: 40px auto;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact-container h2 {
+            color: #00557f;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 1.8em;
+        }
+        .contact-info {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .contact-info p {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        .contact-info a {
+            color: #007ba7;
+            text-decoration: none;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Compact Contact Form */
+        .contact-form {
+            max-width: 400px;
+            width: 100%;
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form h3 {
+            color: #00557f;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+        .contact-form textarea {
+            resize: vertical;
+        }
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007ba7;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .contact-form button:hover {
+            background-color: #00557f;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #00557f;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+        footer a {
+            color: #ffdd40;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-container {
+                margin: 20px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>AR LIGHTING SOLUTION</h1>
+        <nav>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+
+    <!-- Contact Section -->
+    <div class="contact-container">
+        <h2>Contact Us</h2>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <p><strong>Address:</strong> 123 Solar Street, Green City, State, ZIP</p>
+            <p><strong>Phone:</strong> <a href="tel:+7908684378">7908684378</a></p>
+            <p><strong>Email:</strong> <a href="mailto:info@arlightingsolution.com">info@arlightingsolution.com</a></p>
+            <p><strong>Working Hours:</strong> Mon - Fri: 9:00 AM - 6:00 PM</p>
+        </div>
+
+        <!-- Compact Contact Form -->
+        <div class="contact-form">
+            <h3>Get in Touch</h3>
+            <form name="google-sheet" action="#" method="post">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="tel" name="contact" placeholder="Contact No." required>
+                <input type="email" name="email" placeholder="Email" required>
+                <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript for Google Sheets Integration -->
+    <script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbx8Jau-IoPUj3yiG4uQxMxrFWot3_HIacn_kI-HmBR_wLflhjrN8nXXzQxtQAy6O-5BeA/exec'; // Replace this with your actual deployment URL
+    const form = document.forms['google-sheet'];
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+            .then(response => response.json())
+            .then(result => {
+                if (result.status === 'success') {
+                    alert("Thanks for contacting us! We will contact you soon.");
+                    form.reset(); // Clear the form fields after submission
+                } else {
+                    alert("Error: " + result.message);
+                }
+            })
+            .catch(error => {
+                alert("There was an error sending your message. Please try again later.");
+                console.error('Error!', error.message);
+            });
+    });
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <p>Designed by Md Rajek Ali. Website: <a href="https://webxamina.com" target="_blank">webxamina.com</a> | Contact: 7908684378</p>
+    </footer>
+</body>
+</html>
