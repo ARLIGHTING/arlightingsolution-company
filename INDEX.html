@@ -19,17 +19,23 @@
         
         /* Header */
         header {
-            background: linear-gradient(135deg, #00557f, #007ba7); /* Enhanced gradient */
+            background: linear-gradient(135deg, #00557f, #007ba7);
             color: #fff;
             padding: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            flex-wrap: wrap;
         }
         header h1 {
             font-size: 1.8em;
             font-weight: bold;
+            flex: 1;
+        }
+        nav {
+            flex: 1;
+            text-align: right;
         }
         nav a {
             color: #fff;
@@ -156,6 +162,14 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            nav {
+                text-align: center;
+                margin-top: 10px;
+            }
             .main-content {
                 flex-direction: column;
                 padding: 15px;
@@ -195,9 +209,8 @@
         <!-- Center Content (Image Gallery) -->
         <section class="center-content">
             <h2>Our Current Work</h2>
-            <!-- Add your images here in alternating setup -->
             <img src="https://i.ibb.co/BKqm9nh/image.png" alt="Project Image 1">
-           <img src="https://i.ibb.co/f1pksQQ/image2.png" alt="Project Image 2">
+            <img src="https://i.ibb.co/f1pksQQ/image2.png" alt="Project Image 2">
             <!-- Add more images as needed -->
         </section>
     </div>
