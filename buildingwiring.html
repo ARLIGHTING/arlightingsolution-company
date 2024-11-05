@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Wiring | AR LIGHTING SOLUTION</title>
+    <style>
+        /* General Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #00557f, #007ba7);
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        header h1 {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 500;
+        }
+        nav a:hover {
+            color: #ffdd40;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 30px;
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .main-content h2 {
+            color: #00557f;
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+        .service-info {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .service-info p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+        .service-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+        .service-image:hover {
+            transform: scale(1.05);
+        }
+
+        /* Contact Section */
+        .contact-form {
+            max-width: 600px;
+            background-color: #e3f2fd;
+            padding: 20px;
+            margin: 30px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form h2 {
+            color: #00557f;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .contact-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007ba7;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+        .contact-form button:hover {
+            background-color: #00557f;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #00557f;
+            color: #fff;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+        footer a {
+            color: #ffdd40;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>AR LIGHTING SOLUTION</h1>
+        <nav>
+            <a href="INDEX.html">Home</a>
+            <a href="Contact_us.html">Contact Us</a>
+            <a href="About_Us.html">About Us</a>
+            <a href="service.html">Service</a>
+            <a href="Our_Project.html">Our Project</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <h2>Building Wiring Services</h2>
+        <div class="service-info">
+            <p>We specialize in high-quality building wiring services tailored to meet both residential and commercial needs. Our experienced electricians handle everything from new installations to rewiring existing systems, ensuring safety and compliance with the latest standards.</p>
+            <p>Our wiring services include:</p>
+            <ul>
+                <li>Complete building wiring solutions</li>
+                <li>Electrical panel installations</li>
+                <li>Lighting and fixture wiring</li>
+                <li>Data and communication cabling</li>
+                <li>Home automation systems wiring</li>
+            </ul>
+           <img src="https://i.ibb.co/tKp3BkX/house-wiring.png" alt="Building Wiring" class="service-image">
+            <p>We use the highest quality materials and the latest techniques to ensure reliable and safe installations. Our goal is to deliver efficient and durable solutions for all your electrical wiring needs.</p>
+        </div>
+    </div>
+
+    <!-- Contact Form (Below) -->
+    <div class="contact-form">
+        <h2>Contact Us for Building Wiring Services</h2>
+        <form action="#" method="post">
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="tel" name="contact" placeholder="Contact No." required>
+            <input type="email" name="email" placeholder="Email" required>
+            <textarea name="message" placeholder="Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>Designed by Md Rajek Ali. Website: <a href="https://webxamina.com" target="_blank">webxamina.com</a> | Contact: 7908684378</p>
+    </footer>
+</body>
+</html>
