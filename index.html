@@ -107,42 +107,101 @@
             transform: scale(1.05);
         }
 
-        /* Contact Form (Below) */
-        .contact-form {
-            max-width: 600px;
-            background-color: #e3f2fd;
-            padding: 20px;
-            margin: 30px auto 0;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        }
-        .contact-form h2 {
-            color: #00557f;
-            font-size: 1.4em;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        .contact-form button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007ba7;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
-            transition: background-color 0.3s ease;
-        }
-        .contact-form button:hover {
-            background-color: #00557f;
-        }
+      /* Contact Form */
+.form-new {
+    width: 90%;
+    max-width: 500px;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 15px;
+    margin: 20px auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+    border: 2px solid transparent;
+    background-clip: padding-box;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Gradient border effect */
+.form-new::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+    border-radius: 17px;
+    background: linear-gradient(135deg, #ff4b1f, #007ba7); /* Gradient border */
+}
+
+/* Heading */
+.form-new h3 {
+    text-align: center;
+    font-size: 24px;
+    color: #333333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Label styling */
+.form-new label {
+    display: block;
+    font-size: 16px;
+    color: #333333;
+    margin-bottom: 8px;
+    text-align: left;
+}
+
+/* Input and Textarea Styling */
+.form-new input,
+.form-new textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    background-color: #f3f3f3;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    color: #333333;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Hover effect on inputs */
+.form-new input:focus,
+.form-new textarea:focus {
+    border-color: #007ba7;
+    box-shadow: 0 0 8px rgba(0, 123, 167, 0.2); /* Subtle focus glow */
+}
+
+/* Placeholder color */
+.form-new input::placeholder,
+.form-new textarea::placeholder {
+    color: #999999;
+    font-size: 14px;
+}
+
+/* Button Styling */
+.form-new button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007ba7;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 16px;
+}
+
+/* Button Hover Effect */
+.form-new button:hover {
+    background-color: #00557f;
+    transform: scale(1.02); /* Slight enlargement on hover */
+}
+
+
+
 
         /* Footer */
         footer {
@@ -217,14 +276,22 @@
     </div>
 
     <!-- Contact Form (Below) -->
-    <div class="contact-form">
-        <h2>Contact Us</h2>
-        <form action="#" method="post">
-            <input type="text" name="name" placeholder="Name" required>
-            <input type="tel" name="contact" placeholder="Contact No." required>
-            <input type="email" name="email" placeholder="Email" required>
-            <textarea name="message" placeholder="Message" required></textarea>
-            <button type="submit">Send Us</button>
+     <div class="form-new">
+        <h3>Contact for BOQ</h3>
+        <form id="google-sheet-form">
+            <label for="Name">Your Name *</label>
+            <input type="text" name="Name" id="Name" placeholder="Enter your name" required>
+
+            <label for="Email">Your Email *</label>
+            <input type="email" name="Email" id="Email" placeholder="Enter your email" required>
+
+            <label for="Phone">Your Contact Number *</label>
+            <input type="text" name="Phone" id="Phone" placeholder="Enter your contact number" required>
+
+            <label for="Message">Your Message *</label>
+            <textarea name="Message" id="Message" rows="4" placeholder="Enter your message" required></textarea>
+
+            <button type="button" onclick="submitForm()">Send</button>
         </form>
     </div>
 
@@ -232,5 +299,21 @@
     <footer>
         <p>Designed by Md Rajek Ali. Website: <a href="https://webxamina.com" target="_blank">webxamina.com</a> | Contact: 7908684378</p>
     </footer>
+
+<script>
+        function submitForm() {
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzbv15oAJepvxKy3VZpqTxekib1R3GiC3q6nwwN-WA5KvE3fvsOfvr7SImTYKYb96fZnw/exec';
+            const form = document.getElementById('google-sheet-form');
+            const formData = new FormData(form);
+
+            fetch(scriptURL, { method: 'POST', body: formData })
+                .then(response => {
+                    alert("Thank you! Your message has been sent.");
+                    form.reset();  // Clear the form after submission
+                })
+                .catch(error => alert("Oops! Something went wrong. Please try again."));
+        }
+    </script>
+
 </body>
 </html>
