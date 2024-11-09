@@ -13,109 +13,136 @@
             font-family: 'Arial', sans-serif;
         }
         body {
-            background-color: #f9f9f9;
+            background: linear-gradient(135deg, #f0f5fa, #cce7f4);
             color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         /* Header */
         header {
             background: linear-gradient(135deg, #00557f, #007ba7);
             color: #fff;
-            padding: 20px;
+            padding: 20px 40px;
+            width: 100%;
+            max-width: 1200px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            border-radius: 10px;
         }
         header h1 {
-            font-size: 1.8em;
+            font-size: 2em;
             font-weight: bold;
+            letter-spacing: 1px;
         }
         nav a {
             color: #fff;
             text-decoration: none;
-            margin: 0 10px;
-            font-weight: 500;
+            margin: 0 15px;
+            font-weight: 600;
+            transition: color 0.3s;
         }
         nav a:hover {
             color: #ffdd40;
         }
 
-        /* Contact Section */
-        .contact-container {
-            max-width: 800px;
-            background-color: #fff;
-            margin: 40px auto;
+        /* Contact Form */
+        .form-new {
+            width: 90%;
+            max-width: 600px;
             padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .contact-container h2 {
-            color: #00557f;
-            margin-bottom: 20px;
-            text-align: center;
-            font-size: 1.8em;
-        }
-        .contact-info {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .contact-info p {
-            font-size: 1.1em;
-            margin-bottom: 10px;
-            line-height: 1.5;
-        }
-        .contact-info a {
-            color: #007ba7;
-            text-decoration: none;
-        }
-        .contact-info a:hover {
-            text-decoration: underline;
+            background: #ffffff;
+            border-radius: 20px;
+            margin: 30px auto;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+            border: 3px solid transparent;
+            background-clip: padding-box;
+            transition: transform 0.3s ease-in-out;
         }
 
-        /* Compact Contact Form */
-        .contact-form {
-            max-width: 400px;
-            width: 100%;
-            background-color: #e3f2fd;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* Gradient border effect */
+        .form-new::before {
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            z-index: -1;
+            border-radius: 22px;
+            background: linear-gradient(135deg, #ff4b1f, #007ba7);
         }
-        .contact-form h3 {
-            color: #00557f;
-            font-size: 1.4em;
-            margin-bottom: 15px;
+
+        /* Form Heading */
+        .form-new h3 {
             text-align: center;
-        }
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 8px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 0.9em;
-        }
-        .contact-form textarea {
-            resize: vertical;
-        }
-        .contact-form button {
-            width: 100%;
-            padding: 10px;
-            background-color: #007ba7;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 1em;
+            font-size: 28px;
+            color: #333333;
+            margin-bottom: 25px;
             font-weight: bold;
-            transition: background-color 0.3s ease;
         }
-        .contact-form button:hover {
-            background-color: #00557f;
+
+        /* Label styling */
+        .form-new label {
+            display: block;
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        /* Input and Textarea Styling */
+        .form-new input,
+        .form-new textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 18px;
+            background-color: #f3f3f3;
+            border: 1px solid #cccccc;
+            border-radius: 10px;
+            color: #333333;
+            font-size: 16px;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        /* Hover effect on inputs */
+        .form-new input:focus,
+        .form-new textarea:focus {
+            border-color: #007ba7;
+            box-shadow: 0 0 10px rgba(0, 123, 167, 0.2);
+        }
+
+        /* Placeholder color */
+        .form-new input::placeholder,
+        .form-new textarea::placeholder {
+            color: #aaa;
+            font-size: 15px;
+        }
+
+        /* Button Styling */
+        .form-new button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(135deg, #007ba7, #00557f);
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            transition: background 0.3s, transform 0.2s;
+            font-size: 18px;
+        }
+
+        /* Button Hover Effect */
+        .form-new button:hover {
+            background: linear-gradient(135deg, #00557f, #004162);
+            transform: translateY(-2px);
+            cursor: pointer;
         }
 
         /* Footer */
@@ -124,22 +151,19 @@
             color: #fff;
             text-align: center;
             padding: 15px;
-            margin-top: 40px;
+            margin-top: 30px;
+            width: 100%;
+            max-width: 1200px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
         footer a {
             color: #ffdd40;
             text-decoration: none;
+            font-weight: bold;
         }
         footer a:hover {
             text-decoration: underline;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .contact-container {
-                margin: 20px;
-                padding: 20px;
-            }
         }
     </style>
 </head>
@@ -149,6 +173,8 @@
         <h1>AR LIGHTING SOLUTION</h1>
         <nav>
             <a href="index.html">Home</a>
+            <a href="#contact">Contact</a>
+            <a href="#services">Services</a>
         </nav>
     </header>
 
@@ -164,41 +190,40 @@
             <p><strong>Working Hours:</strong> Mon - Fri: 9:00 AM - 6:00 PM</p>
         </div>
 
-        <!-- Compact Contact Form -->
-        <div class="contact-form">            
-            <h3>Get in Touch</h3>    
-            <form name="google-sheet" action="#" method="post">
-                <input type="text" name="name" placeholder="Name" required>
-                <input type="tel" name="contact" placeholder="Contact No." required>
-                <input type="email" name="email" placeholder="Email" required>
-                <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
+        <!-- Contact Form (Below) -->
+        <div class="form-new">
+            <h3>Contact for BOQ</h3>
+            <form id="google-sheet-form">
+                <label for="Name">Your Name *</label>
+                <input type="text" name="Name" id="Name" placeholder="Enter your name" required>
+
+                <label for="Email">Your Email *</label>
+                <input type="email" name="Email" id="Email" placeholder="Enter your email" required>
+
+                <label for="Phone">Your Contact Number *</label>
+                <input type="text" name="Phone" id="Phone" placeholder="Enter your contact number" required>
+
+                <label for="Message">Your Message *</label>
+                <textarea name="Message" id="Message" rows="4" placeholder="Enter your message" required></textarea>
+
+                <button type="button" onclick="submitForm()">Send</button>
             </form>
         </div>
     </div>
 
-    <!-- JavaScript for Google Sheets Integration -->
     <script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbzbv15oAJepvxKy3VZpqTxekib1R3GiC3q6nwwN-WA5KvE3fvsOfvr7SImTYKYb96fZnw/exec'; // Replace this with your actual deployment URL
-    const form = document.forms['google-sheet'];
+        function submitForm() {
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbzbv15oAJepvxKy3VZpqTxekib1R3GiC3q6nwwN-WA5KvE3fvsOfvr7SImTYKYb96fZnw/exec';
+            const form = document.getElementById('google-sheet-form');
+            const formData = new FormData(form);
 
-    form.addEventListener('submit', e => {
-        e.preventDefault();
-        fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-            .then(response => response.json())
-            .then(result => {
-                if (result.status === 'success') {
-                    alert("Thanks for contacting us! We will contact you soon.");
-                    form.reset(); // Clear the form fields after submission
-                } else {
-                    alert("Error: " + result.message);
-                }
-            })
-            .catch(error => {
-                alert("There was an error sending your message. Please try again later.");
-                console.error('Error!', error.message);
-            });
-    });
+            fetch(scriptURL, { method: 'POST', body: formData })
+                .then(response => {
+                    alert("Thank you! Your message has been sent.");
+                    form.reset();
+                })
+                .catch(error => alert("Oops! Something went wrong. Please try again."));
+        }
     </script>
 
     <!-- Footer -->
